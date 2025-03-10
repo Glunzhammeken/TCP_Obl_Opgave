@@ -19,7 +19,7 @@ namespace TCP_Obl_Opgave
                 while (isRunning)
                 {
                     string? msg = reader.ReadLine();
-                    Console.WriteLine($"Received: {msg}");
+                    
 
                     if (msg == "Random")
                     {
@@ -53,6 +53,7 @@ namespace TCP_Obl_Opgave
                     {
                         isRunning = false;
                         writer.WriteLine("Connection closed.");
+                        Console.WriteLine($"Client disconnected: {tcpClient.Client.RemoteEndPoint}");
                     }
                     else
                     {
